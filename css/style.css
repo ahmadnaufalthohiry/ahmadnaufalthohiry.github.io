@@ -1,20 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lobster&display=swap");
 
 :root {
   /* Backgrounds - dark futuristic base */
   --bg-black-900: #0a0f1f; /* Biru sangat gelap (nyaris hitam) */
   --bg-black-100: #0d1b2a; /* Biru kehitaman lembut */
-  --bg-black-50: #112240; /* Midnight blue */
+  --bg-black-50: #417a91; /* Midnight blue */
 
   /* Text colors - glowing neon blues */
-  --text-black-900: #64ffda; /* Neon cyan / electric aqua */
+  --text-black-900: #f0f0f0; /* Neon cyan / electric aqua */
   --text-black-700: #00bfff; /* Bright neon blue */
 }
 
 body {
   line-height: 1.5;
   font-size: 16px;
-  font-family: "Poppins" sans-serif;
+  font-family: "Jost";
 }
 
 * {
@@ -39,16 +39,36 @@ ul {
   min-height: 100vh;
   display: block;
   position: fixed;
-  left: 270px;
+  left: 230px;
+  padding: 0 30px;
   top: 0;
   right: 0;
   z-index: 0;
   opacity: 1;
 }
 
+.pad-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+}
+
 /* Aside */
 .aside {
-  width: 270px;
+  width: 230px;
   background: var(--bg-black-100);
   position: fixed;
   left: 0;
@@ -71,15 +91,14 @@ ul {
 
 .aside .logo a {
   color: var(--text-black-900);
-  font-weight: 700;
+  font-weight: 600;
   padding: 15px 20px;
-  font-size: 30px;
-  letter-spacing: 4px;
+  font-size: 40px;
   position: relative;
 }
 
 .aside .logo a span {
-  font-family: "Clicker script", cursive;
+  font-family: "Lobster", cursive;
   font-family: 40px;
   color: var(--skin-color);
 }
@@ -161,7 +180,7 @@ ul {
 }
 
 .aside .nav li a {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   display: block;
   border-bottom: 2px solid var(--bg-black-50);
@@ -175,4 +194,53 @@ ul {
 
 .aside .nav li a i {
   margin-right: 15px;
+}
+
+/* Home */
+.home {
+  min-height: 100vh;
+  display: flex;
+  color: var(--text-black-900);
+}
+
+.home .home-info {
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+h3 .hello {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+h3.hello span {
+  font-family: "Clicker script", cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--skin-color);
+}
+
+h3 .my-profession {
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.typing {
+  color: var(--skin-color);
+}
+
+.home-info p {
+  margin-bottom: 70px;
+  font-size: 20px;
+}
+
+.home .home-img {
+  flex: 0 0 40%;
+  max-width: 40%;
+  text-align: center;
+  position: relative;
+}
+
+.home .home-img img {
+  height: 400px;
 }

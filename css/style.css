@@ -15,6 +15,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   font-family: "Jost";
+  color: var(--text-black-900);
 }
 
 * {
@@ -38,16 +39,19 @@ ul {
   background-color: var(--bg-black-900);
   min-height: 100vh;
   display: block;
-  position: fixed;
-  left: 230px;
   padding: 0 30px;
-  top: 0;
-  right: 0;
-  z-index: 0;
   opacity: 1;
 }
 
-.pad-15 {
+.hidden {
+  display: none !important;
+}
+
+.main-content {
+  padding-left: 230px;
+}
+
+.padd-15 {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -58,12 +62,74 @@ ul {
   margin: auto;
 }
 
+.section .container {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 40px;
+  color: var(--text-black-900);
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title h2::before {
+  content: "";
+  height: 4px;
+  width: 50px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.section-title h2::after {
+  content: "";
+  height: 4px;
+  width: 25px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
   position: relative;
+}
+
+.btn {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 35px;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--bg-black-900);
+  background: var(--skin-color);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  color: var(--text-black-900);
+  background: var(--bg-black-100);
+  border: 1px solid var(--text-black-700);
+}
+
+.shadow-dark {
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
 }
 
 /* Aside */
@@ -99,7 +165,7 @@ ul {
 
 .aside .logo a span {
   font-family: "Lobster", cursive;
-  font-family: 40px;
+  font-size: 40px;
   color: var(--skin-color);
 }
 
@@ -220,7 +286,7 @@ h3.hello span {
   color: var(--skin-color);
 }
 
-h3 .my-profession {
+h3.my-profession {
   font-size: 30px;
   margin: 15px 0;
 }
@@ -241,6 +307,221 @@ h3 .my-profession {
   position: relative;
 }
 
+.home-img:before {
+  content: "";
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  top: -40px;
+  left: 20px;
+  border-top: 10px solid var(--skin-color);
+  border-left: 10px solid var(--skin-color);
+  border-radius: 10px;
+}
+
+.home-img:after {
+  content: "";
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  bottom: -40px;
+  right: 20px;
+  border-bottom: 10px solid var(--skin-color);
+  border-right: 10px solid var(--skin-color);
+  border-radius: 10px;
+}
+
 .home .home-img img {
   height: 400px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* About */
+.about .about-content {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.about .about-content .about-text {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.about .about-content .about-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.about .about-content .about-text h3 span {
+  color: var(--skin-color);
+}
+
+.about .about-content .about-text p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.about .about-content .personal-info {
+  flex: 0 0 60%;
+  max-width: 60%;
+  margin-top: 40px;
+}
+
+.about .about-content .personal-info .info-item {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.about .about-content .personal-info .info-item p {
+  font-weight: 600;
+  padding: 10px 0;
+  font-size: 16px;
+  border-bottom: 1px solid var(--bg-black-50);
+}
+
+.about .about-content .personal-info .info-item p span {
+  font-weight: 400;
+  color: var(--skin-color);
+  margin-left: 4px;
+  display: inline-block;
+}
+
+.about .about-content .personal-info .buttons {
+  margin-top: 30px;
+}
+
+.about .about-content .personal-info .buttons .btn {
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.about .about-content .skills {
+  flex: 0 0 40%;
+  max-width: 40%;
+  margin-top: 40px;
+}
+
+.about .about-content.skills .skill-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.about .about-content .skills .skill-item h5 {
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--skin-color);
+  text-transform: capitalize;
+}
+
+.about .about-content .skills .skill-item .progress {
+  background-color: var(--text-black-900);
+  height: 7px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.about .about-content .skills .skill-item {
+  margin-bottom: 25px;
+}
+
+.about .about-content .skills .skill-item .progress .progress-in {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--skin-color);
+}
+
+.about .about-content .skills .skill-item .skill-percent {
+  position: absolute;
+  right: 0;
+  color: var(--text-black-900);
+  top: -40px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.about .personal-info .education,
+.about .personal-info .experience {
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin-top: 30px;
+}
+
+.about .personal-info h3.title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.about .personal-info .timeline-box {
+  flex: 0 0 90%;
+  max-width: 90%;
+}
+
+.about .personal-info .timeline {
+  background-color: var(--bg-black-100);
+  padding: 10px 7px;
+  border: 1px solid var(--bg-black-50);
+  border-radius: 10px;
+  position: relative;
+}
+
+.about .personal-info .timeline .timeline-item {
+  position: relative;
+  padding-left: 25px;
+  padding-bottom: 30px;
+}
+
+.about .personal-info .timeline .timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.about .personal-info .timeline .timeline-item::before {
+  content: "";
+  width: 2px;
+  position: absolute;
+  height: 100%;
+  left: 7px;
+  top: 3px;
+  background-color: var(--skin-color);
+}
+
+.about .personal-info .timeline .circle-dot {
+  background-color: var(--skin-color);
+  left: 0;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.about .personal-info .timeline .timeline-date {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.about .personal-info .timeline .timeline-date .fa {
+  margin-right: 5px;
+}
+
+.about .personal-info .timeline .timeline-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  color: var(--skin-color);
+}
+
+.about .personal-info .timeline .timeline-text {
+  line-height: 15px;
+  font-size: 12px;
+  /* text-align: justify; */
 }

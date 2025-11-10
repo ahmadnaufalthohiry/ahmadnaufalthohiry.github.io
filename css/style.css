@@ -706,3 +706,46 @@ h3.my-profession {
   height: 50px;
   padding: 0 50px;
 }
+
+/* Responsive untuk aside */
+@media (max-width: 992px) {
+  /* Sembunyikan aside saat layar kecil */
+  .aside {
+    position: fixed;
+    left: -260px; /* geser ke kiri, tersembunyi */
+    transition: all 0.5s ease;
+    z-index: 999;
+  }
+
+  .main-content {
+    padding-left: 0;
+  }
+
+  /* Saat aktif (ditampilkan) */
+  .aside.active {
+    left: 20px;
+  }
+
+  /* Tampilkan nav-toggler (span) */
+  .aside .nav-toggler {
+    display: flex;
+    left: 20px;
+    transition: all 0.3s ease;
+  }
+
+  /* .nav-toggler span {
+    display: block;
+    width: 45px;
+    height: 9px;
+    background: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  } */
+}
+
+/* Desktop mode (toggler disembunyikan) */
+@media (min-width: 993px) {
+  .nav-toggler {
+    display: none;
+  }
+}

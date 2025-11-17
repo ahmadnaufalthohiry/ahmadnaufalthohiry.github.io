@@ -270,8 +270,8 @@ ul {
 }
 
 .home .home-info {
-  flex: 0 0 60%;
-  max-width: 60%;
+  flex: 0 0 65%;
+  max-width: 65%;
 }
 
 h3 .hello {
@@ -301,13 +301,13 @@ h3.my-profession {
 }
 
 .home .home-img {
-  flex: 0 0 40%;
-  max-width: 40%;
+  flex: 0 0 35%;
+  max-width: 35%;
   text-align: center;
   position: relative;
 }
 
-.home-img:before {
+/* .home-img:before {
   content: "";
   position: absolute;
   height: 80px;
@@ -329,12 +329,14 @@ h3.my-profession {
   border-bottom: 10px solid var(--skin-color);
   border-right: 10px solid var(--skin-color);
   border-radius: 10px;
-}
+} */
 
 .home .home-img img {
   height: 400px;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 20px;
+  border-top: 10px solid var(--text-black-700);
+  border-bottom: 10px solid var(--text-black-700);
 }
 
 /* About */
@@ -711,10 +713,124 @@ h3.my-profession {
 @media (max-width: 992px) {
   /* Sembunyikan aside saat layar kecil */
   .aside {
-    position: fixed;
-    left: -260px; /* geser ke kiri, tersembunyi */
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    padding-bottom: 15px;
     transition: all 0.5s ease;
     z-index: 999;
+    border-bottom: 2px solid var(--bg-black-50);
+  }
+
+  .aside .logo {
+    left: 20px;
+    top: 10px;
+    font-size: 20px;
+  }
+
+  /* Logo mengecil sedikit */
+  .aside .logo a {
+    padding: 10px 15px;
+    font-size: 28px; /* sebelumnya mungkin 1.5–2rem */
+  }
+
+  .aside .logo a span {
+    font-size: 30px; /* huruf N jadi sedikit lebih kecil */
+  }
+
+  .aside .logo a:before,
+  .aside .logo a:after {
+    width: 50px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-width: 3px;
+    border-radius: 10px;
+  }
+
+  .aside .nav {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 120px;
+  }
+
+  .aside .nav li {
+    margin-bottom: 0;
+  }
+
+  .aside .nav li a {
+    font-size: 18px;
+    padding: 5px 10px;
+    border-bottom: none;
+  }
+
+  /* HOME */
+  .home {
+    min-height: auto;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: row; /* tetap samping */
+    align-items: center;
+  }
+
+  /* Kolom kiri dan kanan mengecil sedikit */
+  .home .home-info {
+    flex: 0 0 65%;
+    max-width: 65%;
+  }
+
+  .home .home-img {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+
+  /* Judul & teks mengecil */
+  h3.hello {
+    font-size: 22px; /* dari 28px */
+  }
+
+  h3.hello span {
+    font-size: 26px; /* dari 30px */
+  }
+
+  h3.my-profession {
+    font-size: 24px; /* dari 30px */
+  }
+
+  .home-info p {
+    font-size: 16px; /* dari 20px */
+    margin-bottom: 40px; /* dari 70px */
+  }
+
+  /* Gambar mengecil */
+  .home .home-img img {
+    height: 300px; /* dari 400px */
+    border-radius: 10px;
+    border-top: 5px solid var(--text-black-700);
+    border-bottom: 5px solid var(--text-black-700);
+  }
+
+  /* Border dekoratif gambar mengecil */
+  .home-img:before,
+  .home-img:after {
+    width: 55px; /* dari 80px */
+    height: 55px;
+    border-width: 6px; /* dari 10px */
+    border-radius: 8px;
+  }
+
+  .home-img:before {
+    display: none;
+  }
+
+  .home-img:after {
+    display: none;
   }
 
   .main-content {
@@ -722,16 +838,16 @@ h3.my-profession {
   }
 
   /* Saat aktif (ditampilkan) */
-  .aside.active {
-    left: 20px;
-  }
+  /* .aside.active {
+    left: 0px;
+  } */
 
   /* Tampilkan nav-toggler (span) */
-  .aside .nav-toggler {
+  /* .aside .nav-toggler {
     display: flex;
     left: 20px;
     transition: all 0.3s ease;
-  }
+  } */
 
   /* .nav-toggler span {
     display: block;
